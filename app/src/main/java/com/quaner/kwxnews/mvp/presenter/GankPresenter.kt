@@ -14,20 +14,20 @@ import javax.inject.Inject
 /**
  * Created by wenon 2017/12/1.
  */
-class HomePresenter @Inject
+class GankPresenter @Inject
 constructor(private val mModel: GankModel,
             private val mView: GankContract.View) : BasePresenter() {
 
-    fun getData(type: String, page: Int, flag: Int) {
+    fun getData(type: String, page: Int) {
 
         mModel.getData(type, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : CallBack<HttpResult<List<GankEntity>>>(mView, "") {
+                .subscribe(object : CallBack<HttpResult<List<GankEntity>>>() {
                     override fun onSuccess(result: HttpResult<List<GankEntity>>) {
-
+                        mView.hideLoading()
                         if (!result.error) {
-
+                            mView.setAdapter(result.results)
                         }
                     }
 
@@ -36,7 +36,7 @@ constructor(private val mModel: GankModel,
                     }
 
                     override fun onFailure() {
-
+                        mView.hideLoading()
                     }
                 })
     }

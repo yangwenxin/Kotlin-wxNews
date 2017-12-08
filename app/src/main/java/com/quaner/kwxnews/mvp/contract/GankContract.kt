@@ -12,7 +12,7 @@ import io.reactivex.Observable
 interface GankContract {
 
     interface View : IView {
-
+        fun setAdapter(results: List<GankEntity>)
     }
 
     interface Model : IModel {

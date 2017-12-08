@@ -1,0 +1,41 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        Customize your theme here.
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="alertDialogTheme">@style/AppThemeDialogAlert</item>
+    </style>
+
+    <style name="AppThemeDialogAlert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarStyleWhite" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="navigationIsButton">true</item>
+        <item name="navigationLeftIcon">@drawable/ic_back_black</item>
+        <item name="navigationText">""</item>
+        <item name="titleTextAppearance">@style/TitleTextStyle</item>
+        <item name="android:background">@color/white</item>
+        <item name="actionMenuTextColor">#000000</item>
+        <item name="actionMenuTextAppearance">@style/toolbar_menuStyle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+    </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="toolbar_menuStyle" parent="@style/TextAppearance.AppCompat.Menu">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+</resources>

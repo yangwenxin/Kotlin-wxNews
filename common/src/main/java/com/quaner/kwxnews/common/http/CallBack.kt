@@ -26,7 +26,7 @@ abstract class CallBack<T> : Observer<T> {
 
     }
 
-    constructor(view: IView, msg: String) {
+    constructor(view: IView, msg: String?) {
         this.view = view
         this.msg = msg
         mHandler = ProgressDialogHandler(view)

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DesignToolbar">
+        <!--导航图标-->
+        <attr name="navigationLeftIcon" format="reference" />
+        <!--导航文字-->
+        <attr name="navigationText" format="string" />
+        <!--导航是否是按钮-->
+        <attr name="navigationIsButton" format="boolean" />
+        <!--导航文字样式-->
+        <attr name="navigationTextAppearance" format="reference" />
+        <!--导航按钮背景-->
+        <attr name="navigationBackground" format="reference" />
+        <!--标题-->
+        <attr name="titleText" format="string" />
+        <!--是否显示右边按钮-->
+        <attr name="showRightButton" format="boolean" />
+        <!--右边按钮文字-->
+        <attr name="rightText" format="string" />
+        <!--右边按钮图标-->
+        <attr name="rightIcon" format="reference" />
+
+        <attr name="rightItem2" format="enum">
+            <enum name="isnull" value="0" />
+            <enum name="only_has_msg" value="1" />
+            <enum name="has_msg_and_setting" value="2" />
+            <enum name="only_text" value="3" />
+            <enum name="only_img" value="4" />
+        </attr>
+    </declare-styleable>
+
+</resources>

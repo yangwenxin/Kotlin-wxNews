@@ -19,13 +19,18 @@ open abstract class BaseActivity : AppCompatActivity(), IView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(layoutId())
         mProgressDialog = ProgressDialog(this)
         mProgressDialog.setCancelable(false)
-        setContentView(layoutId())
         inject()
+        if (intent.extras != null) {
+            initBundleExtras(intent.extras)
+        }
         init()
         loadData()
     }
+
+    abstract fun initBundleExtras(extras: Bundle)
 
     abstract fun inject()
 
