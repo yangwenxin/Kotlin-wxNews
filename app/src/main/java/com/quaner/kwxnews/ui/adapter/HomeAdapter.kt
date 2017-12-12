@@ -34,14 +34,14 @@ open class HomeAdapter(private var data: List<GankEntity>, private var context: 
             var holder: ViewHolder = holder as ViewHolder
             holder.tv_name.text = gankEntity.who ?: "佚名"
             holder.tv_content.text = gankEntity.desc
+            holder.itemView.setOnClickListener { v ->
+                if (listener != null) {
+                    listener!!.onItemClick(data[position], position)
+                }
+            }
         } else {
             var holder: HeaderViewHolder = holder as HeaderViewHolder
             holder.tv_time.text = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        }
-        holder.itemView.setOnClickListener { v ->
-            if (listener != null) {
-                listener!!.onItemClick(data[position], position)
-            }
         }
     }
 

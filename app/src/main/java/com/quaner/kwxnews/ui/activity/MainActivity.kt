@@ -49,6 +49,7 @@ class MainActivity : BaseActivity() {
             R.id.navigation_home -> {
                 if (currentFragment !is HomeFragment) {
                     currentFragment = homeFragment
+                    homeFragment.scrollerY = 0
                     addFragment()
                 }
                 return@OnNavigationItemSelectedListener true
