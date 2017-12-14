@@ -2,6 +2,7 @@ package com.quaner.kwxnews.ui.activity
 
 import android.os.Bundle
 import android.webkit.WebSettings
+import android.webkit.WebViewClient
 import com.quaner.kwxnews.R
 import com.quaner.wxnews.common.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_webview.*
@@ -32,12 +33,13 @@ class WebViewActivity : BaseActivity() {
     private fun initToolbar() {
         toolbar.setTitleText(title)
         toolbar.setNavigationOnClickListener {
-            finish()
+            goBack()
         }
     }
 
     private fun initWebView() {
         val webSettings = webview.settings
+        webview.webViewClient = WebViewClient()
         webSettings.builtInZoomControls = false
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
@@ -50,6 +52,18 @@ class WebViewActivity : BaseActivity() {
 
     override fun loadData() {
 
+    }
+
+    override fun onBackPressed() {
+        goBack()
+    }
+
+    private fun goBack() {
+        if (webview.canGoBack()) {
+            webview.goBack()
+        } else {
+            finish()
+        }
     }
 
     override fun layoutId(): Int {
